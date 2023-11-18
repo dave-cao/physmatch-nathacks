@@ -36,9 +36,9 @@ export default function MainNavigation({ supabase, session }) {
           <span />
         </button>
         <h1 className="main-naviagtion__tile">
-          <Link id="link_Styles" to="/">
-            PhysMatch{" "}
-          </Link>
+        <Link id="link_Styles" to="/">
+        <img src = "physmatch1.png" alt="Jai" />
+        </Link>
         </h1>
         <nav className="main-navigation__header-nav">
           <NavLinks supabase={supabase} session={session} />

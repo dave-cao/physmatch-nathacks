@@ -23,10 +23,17 @@
   text-decoration: none;
 
 }
-#link_Styles{
+#link_Styles {
   color: white;
   text-decoration: none;
 }
+
+#link_Styles img {
+  width: 100%;
+  height: 55px;
+  
+}
+
 .main-navigation__title a {
   color: white; 
 }
