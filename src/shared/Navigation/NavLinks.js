@@ -21,17 +21,17 @@ export default function NavLinks({ supabase, session }) {
           </NavLink>
         </li>
       )}
-      {!session && (
+      {session && (
         <li>
           <NavLink to="/clients">Clients</NavLink>
         </li>
       )}
-      {!session && (
+      {session && (
         <li>
           <NavLink to="/onboarding">Onboarding</NavLink>
         </li>
       )}
-      {!session && (
+      {session && (
         <li>
           <NavLink to="/requests">Requests</NavLink>
         </li>
