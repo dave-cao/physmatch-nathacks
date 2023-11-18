@@ -1,0 +1,125 @@
+.table {
+  display: table;
+  width: 100%;
+}
+
+.table-row {
+  display: table-row;
+}
+.card_car-title-h1{
+    background: #F3E9D2;
+    color: #000000;
+}
+
+.table-cell {
+  display: table-cell;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.card_car-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+
+}
+.card_car-title-h {
+  margin: 0;
+  font-size: 40px;
+  color: #000000;
+  background-color: #F3E9D2;
+}
+.card_car-text-h{
+    margin: 0;
+  font-size: 40px;
+  color: #000000;
+  background-color: #F3E9D2;
+}
+.card_car-text {
+font-size: 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.card_car-button2 {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  background-color: #ffffff;
+  border-color: #000000;
+  color: #000000;
+  border: none;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.table-cell:nth-child(1) {
+  width: 30%;
+}
+
+.table-cell:nth-child(2),
+.table-cell:nth-child(3),
+.table-cell:nth-child(4) {
+  width: 20%;
+}
+
+.table-cell:last-child {
+  text-align: center;
+}
+
+.card_car-button22{
+display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  background-color: #000000;
+  border-color: #000000;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.card_car-button2:hover {
+  color: #ffffff;
+  background-color: #114B5F;
+}
+.dropdown {
+  background-color: #ffffff;
+  padding: 1rem;
+  margin-top: 1rem;
+  color: #000000;
+  margin-left: 2rem;
+}
+
+.dropdown .table-row {
+  display: table-row;
+  font-size: 10px;
+}
+
+.dropdown .table-cell {
+  display: table-cell;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+  word-wrap: break-word;
+}
+
+@media (max-width: 769px) {
+    .card_car-title-h{
+        font-size: 15px;
+    }
+    .card_car-text-h{
+        font-size: 15px;
+
+    }
+    .card_car-title1{
+    font-size: 10px;
+}
+}
+

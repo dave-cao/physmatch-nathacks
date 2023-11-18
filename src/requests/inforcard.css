@@ -1,0 +1,109 @@
+/* styles.css */
+
+body {
+    background-color: #ffffff; 
+    margin: 0; 
+    padding: 0;
+  }
+  
+  .information-card {
+    border: 1px solid #000000;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0);
+    background-color: #F3E9D2;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  
+  
+  .information-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* styles.css */
+  
+  .profile-pic {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+  }
+  
+  
+  
+  
+  .name {
+    margin-bottom: 15px;
+    color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .field {
+    margin-bottom: 15px;
+  }
+  
+  .field strong {
+    margin-right: 10px;
+  }
+  
+  .buttons {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #F3E9D2;
+
+  }
+  .onboardbutton {
+  width: 10%;
+
+}
+.onboardbutton:hover {
+  
+
+}
+  .buttons {
+    margin-top: 16px;
+    
+    display: flex;
+    justify-content: center; /* Center align buttons horizontally */
+    align-items: center; /* Center align buttons vertically */
+  }
+  
+  .accept-button,
+  .change-appointment-button {
+    scale: 1.1;
+    background-color: #114B5F;
+    color: white;
+    padding: 12px 16px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 30px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accept-button:hover,
+  .change-appointment-button:hover {
+    scale: 1.2;
+  background-color: #0a2933;
+
+  color: white;
+  }
+  
+  .change-appointment-button {
+  background-color: #114B5F;
+  color: white;
+  }
+  
+  .change-appointment-button:hover {
+    scale: 1.2;
+  background-color: #0a2933;
+  color: white;
+  }

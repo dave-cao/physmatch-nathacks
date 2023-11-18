@@ -1,0 +1,53 @@
+.card-onb {
+  background-color: #F3E9D2;
+  border-radius: 10px;
+  box-shadow: 4px 4px rgba(0, 0, 0);
+  padding: 20px;
+  margin: 20px;
+  width: 100%;
+  transition: transform 0.3s ease;
+  display: flex;
+  color: rgb(0, 0, 0);
+  justify-content: space-around;
+}
+.onboardcards{
+  display: flex;
+
+}
+.onboardbutton {
+  width: 10%;
+  background-color: #114B5F;
+  color: white;
+
+}
+.onboardbutton:hover {
+  scale: 1.1;
+  background-color: #0a2933;
+  color: white;
+
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.card p {
+  color: #666666;
+  margin-bottom: 8px;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.card li {
+  color: #888888;
+  font-style: italic;
+}
+

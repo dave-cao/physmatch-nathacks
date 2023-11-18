@@ -1,0 +1,72 @@
+.book-main{
+    display: flex;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; 
+  
+}
+
+.custom-button {
+    width: 100%;
+  border: none;
+  background-color: #F3E9D2; 
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 4px 6px rgba(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  scale: 1.03;
+  border-radius: 1rem;
+  background-color: #ead5a5;
+}
+
+.content {
+  text-align: center;
+
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.doc-button{
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #F3E9D2;
+
+  
+
+}
+.doc-button:hover {
+  scale: 1.1;
+  border-radius: 1rem;
+  color: black;
+  background-color: #eedeb8;
+
+
+
+}
+
+.doctor-title-main{
+  text-align: center;
+  background-color: #000000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0);
+  color: #fffefe;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
