@@ -41,7 +41,7 @@ function App() {
   let routes;
 
   // routes for when doctor is logged in (doctor view)
-  if (false) {
+  if (true) {
     routes = (
       <Routes>
         <Route exact path="/clients" element={<Clients />} />

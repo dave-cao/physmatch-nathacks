@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 # Load the model outside of the route decorator to load it only once when the app starts
 try:
-    rf = load('randomforest.joblib')
+    rf = load('./randomforest50.joblib')
 except Exception as e:
     print("An error occurred:", e)
 
