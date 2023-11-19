@@ -48,9 +48,11 @@ def extract_features_from_csv(file_path):
     feat_std = sliding_window(data,window_size,step_size,std)
     feat_skew = sliding_window(data,window_size,step_size,skew)
     feat_kurt = sliding_window(data,window_size,step_size,kurt)
+    feat_max = sliding_window(data,window_size,step_size,max) 
     feat_min = sliding_window(data,window_size,step_size,min)
-    feat_max = sliding_window(data,window_size,step_size,max)
+    # Create feature matrix
     features = pd.concat([feat_mean,feat_std,feat_skew,feat_kurt,feat_max,feat_min], axis =1).dropna() #,feat_derivative
+    #change column names to match
     for i in range(len(features.columns)):
         features.columns.values[i] = column_names[i]
     return features
@@ -113,10 +115,14 @@ def max(window):
 #features.to_csv('')
 
 if __name__ == "__main__":
+    # grab data from live data stream (last 1000 samples)
     file_path = "eeglive.csv"
+    # calculate features for current data chunk
     features = extract_features_from_csv(file_path)
     print(features)
+    # load pre-trained model
     rf = load("randomforest50.joblib")
+    # make predictions i.e. classify emotions
     print(rf.predict(features))
 
     
