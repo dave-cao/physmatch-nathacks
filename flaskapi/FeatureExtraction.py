@@ -5,6 +5,7 @@ Contains functions preforming feature extraction
 
 import pandas as pd
 from joblib import load
+from Preprocessing import *
 
 def extract_features_from_csv(file_path):
     column_names = ['# mean_0_a',
@@ -36,8 +37,11 @@ def extract_features_from_csv(file_path):
 
     # Read CSV and remove necessary channels from muse data
     df = pd.read_csv(file_path)
-    data = df.drop(['Timestamp', 'Right AUX'],axis = 1)
+    data_unfilt = df.drop(['Timestamp', 'Right AUX'],axis = 1)
     sample_frequency = 250
+
+    # Filter raw data
+    data = filter_eeg_df(data_unfilt)
 
     # Parameters for the sliding window
     window_size = int(sample_frequency * 1) # seconds
@@ -115,14 +119,14 @@ def max(window):
 #features.to_csv('')
 
 if __name__ == "__main__":
-    # grab data from csv
+    # Grab data from csv
     file_path = "eeglive.csv"
-    # calculate features for current data chunk
+    # Calculate features for current data chunk
     features = extract_features_from_csv(file_path)
     print(features)
-    # load pre-trained model
+    # Load pre-trained model
     rf = load("randomforest50.joblib")
-    # make predictions i.e. classify emotions
+    # Make predictions i.e. classify emotions
     print(rf.predict(features))
 
     
