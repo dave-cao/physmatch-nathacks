@@ -48,6 +48,8 @@ function App() {
 
         <Route exact path="/onboarding" element={<Onboarding />} />
         <Route exact path="/requests" element={<Requests />} />
+        <Route exact path="/" element={<Book supabase={supabase} session={session} />} />
+        <Route exact path="/doctor_page/:id" element={<DoctorPage supabase={supabase} session={session} />} />
 
         <Route
           exact

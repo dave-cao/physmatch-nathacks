@@ -17,7 +17,7 @@ function OnboardCard(props) {
       console.log("openEmotions");
       setopendescription(true);
       fetchData()
-      setInterval(fetchData, 3000);
+        setInterval(fetchData, 3000);
     }
 
   const[data,setData]=useState();
@@ -40,19 +40,35 @@ function OnboardCard(props) {
   console.log(data)
   let emoji = null;
   let text=""
-  if (data) {
-    if (data.predictions[0] === 1) {
-      text = "happy"
+  let happyCount = 0
+  let sadCount = 0
+  let neutralCount = 0
 
-      emoji = <div><iframe src="https://giphy.com/embed/chzz1FQgqhytWRWbp3" width="300" height="300"  class="giphy-embed" allowFullScreen></iframe></div>; // Happy emoji
-    } else if (data.predictions[0] === -1) {
+  if (data) {
+
+    for (let i = 0; i < data.predictions.length; i++) {
+      const num = data.predictions[i];
+
+      if (num === 1) {
+        happyCount += 1
+      } else if (num === -1) {
+        sadCount += 1
+      } else if (num === 0) {
+        neutralCount += 1
+      }
+    }
+
+    const counts = [happyCount, sadCount, neutralCount]
+
+    if (sadCount >= 5) {
       text="sad"
       emoji = emoji = <div><iframe src="https://giphy.com/embed/OPU6wzx8JrHna" width="300" height="300" class="giphy-embed" allowFullScreen></iframe></div>; // Sad emoji
-    } else if (data.predictions[0] === 0) {
+    } else if (happyCount >= neutralCount) {
+      text = "happy"
+      emoji = <div><iframe src="https://giphy.com/embed/chzz1FQgqhytWRWbp3" width="300" height="300"  class="giphy-embed" allowFullScreen></iframe></div>; // Happy emoji
+    } else {
       text="calm"
       emoji = <div><iframe src="https://giphy.com/embed/8ccXcA74ufMBQAR2oq" width="300" height="300" class="giphy-embed" allowFullScreen></iframe></div>; // Neutral emoji
-    } else {
-      emoji = emoji = <div><iframe src="https://giphy.com/embed/uIJBFZoOaifHf52MER" width="300" height="300" class="giphy-embed" allowFullScreen></iframe></div>;// Loading emoji (Hourglass with Flowing Sand)
     }
   } else {
     emoji = emoji = <div><iframe src="https://giphy.com/embed/uIJBFZoOaifHf52MER" width="300" height="300" class="giphy-embed" allowFullScreen></iframe></div>;// Default emoji if data is not available
