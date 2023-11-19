@@ -115,7 +115,7 @@ def max(window):
 #features.to_csv('')
 
 if __name__ == "__main__":
-    # grab data from live data stream (last 1000 samples)
+    # grab data from csv
     file_path = "eeglive.csv"
     # calculate features for current data chunk
     features = extract_features_from_csv(file_path)
