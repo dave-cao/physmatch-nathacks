@@ -41,13 +41,15 @@ function App() {
   let routes;
 
   // routes for when doctor is logged in (doctor view)
-  if (false) {
+  if (true) {
     routes = (
       <Routes>
         <Route exact path="/clients" element={<Clients />} />
 
         <Route exact path="/onboarding" element={<Onboarding />} />
         <Route exact path="/requests" element={<Requests />} />
+        <Route exact path="/" element={<Book supabase={supabase} session={session} />} />
+        <Route exact path="/doctor_page/:id" element={<DoctorPage supabase={supabase} session={session} />} />
 
         <Route
           exact
