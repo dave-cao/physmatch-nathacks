@@ -19,3 +19,7 @@ step in bridging the gap between medical expertise and personalized patient care
 
 Moving forward, PhysMatch plans to implement an in-house video chat feature, reducing reliance on external platforms like Zoom or Google Meets. Our focus also extends to continuous refinement of 
 the user interface and overall experience, ensuring PhysMatch remains a cutting-edge solution in healthcare, meeting evolving needs for both patients and healthcare professionals in Alberta.
+
+Links:
+- DevPost: https://devpost.com/software/physmatch
+- Frontend Prototype: https://dave-cao.github.io/physmatch-nathacks/
