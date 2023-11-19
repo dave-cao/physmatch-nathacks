@@ -1,6 +1,10 @@
 # Physmatch
 v1.0
 
+
+https://github.com/dave-cao/physmatch-nathacks/assets/109097825/f0c62ea3-80f8-4a63-87dc-d4fd81e4f5a7
+
+
 PhysMatch addresses a crucial need in Alberta’s healthcare system, connecting 650,000 residents without a family doctor to local physicians through an advanced technology-enhanced platform. 
 Developed using the React JS framework, PhysMatch features an interactive map for locating physicians and managing appointments. A standout feature is the built-in emotion recognition tool, 
 using the Muse headband to capture EEG data from patients during initial consultations. This data, from standard 10-10 system electrode locations TP9, AF7, AF8, and TP10, is processed using
