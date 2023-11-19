@@ -4,14 +4,39 @@ Contains functions preforming feature extraction
 """
 
 import pandas as pd
+from joblib import load
 
 def extract_features_from_csv(file_path):
+    column_names = ['# mean_0_a',
+ 'mean_1_a',
+ 'mean_2_a',
+ 'mean_3_a',
+ 'stddev_0_a',
+ 'stddev_1_a',
+ 'stddev_2_a',
+ 'stddev_3_a',
+ 'moments_0_a',
+ 'moments_2_a',
+ 'moments_4_a',
+ 'moments_6_a',
+ 'moments_1_a',
+ 'moments_3_a',
+ 'moments_5_a',
+ 'moments_7_a',
+ 'max_0_a',
+ 'max_1_a',
+ 'max_2_a',
+ 'max_3_a',
+ 'min_0_a',
+ 'min_1_a',
+ 'min_2_a',
+ 'min_3_a']
     # Input file you want to process
     # csv_file_path = "EEG_recording_2023-11-17-23.47.00.csv"
 
     # Read CSV and remove necessary channels from muse data
     df = pd.read_csv(file_path)
-    data = df.drop(['timestamps', 'Right AUX'],axis = 1)
+    data = df.drop(['Timestamp', 'Right AUX'],axis = 1)
     sample_frequency = 250
 
     # Parameters for the sliding window
@@ -26,6 +51,8 @@ def extract_features_from_csv(file_path):
     feat_min = sliding_window(data,window_size,step_size,min)
     feat_max = sliding_window(data,window_size,step_size,max)
     features = pd.concat([feat_mean,feat_std,feat_skew,feat_kurt,feat_max,feat_min], axis =1).dropna() #,feat_derivative
+    for i in range(len(features.columns)):
+        features.columns.values[i] = column_names[i]
     return features
 
 # This function moves through the data in chunks of window_size and create the next chunk with an overlap of step_size
@@ -84,3 +111,12 @@ def max(window):
 #feat_derivative = sliding_window(data,window_size,step_size,derivative)
 
 #features.to_csv('')
+
+if __name__ == "__main__":
+    file_path = "eeglive.csv"
+    features = extract_features_from_csv(file_path)
+    print(features)
+    rf = load("randomforest50.joblib")
+    print(rf.predict(features))
+
+    

@@ -8,8 +8,10 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 # Load the model outside of the route decorator to load it only once when the app starts
 try:
-    rf = load('randomforest.joblib')
+    rf = load('randomforest50.joblib')
+    print(rf)
 except Exception as e:
+    print("BIG ERROR")
     print("An error occurred:", e)
 
 # Function to make predictions
@@ -52,7 +54,7 @@ def hello_world():
     # give this func a csv and should work
     stuff=bunch_clean_data_by_second("./test.csv")
 
-    stuff.set_index(stuff.columns[0], inplace=True)
+    # stuff.set_index(stuff.columns[0], inplace=True)
     # Make predictions using the loaded model
     x = make_a_pred(stuff)
 
